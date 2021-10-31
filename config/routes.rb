@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  get /articles to "articles#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root "articles#index"
+
+  
+  get "/articles", to: "articles#index"
+
+  # О подробностях DSL, доступного в этом файле, написано в http://rusrails.ru/rails-routing
 end
