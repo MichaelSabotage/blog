@@ -8,11 +8,12 @@
   <li><%= link_to "Destroy", article_path(@article),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "To main", root_path %></li>
 </ul>
 
 <h2>Comments</h2>
-<% redrer @article.comments %>
+<%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<% render 'comments/form' %>
+<%= render 'comments/form' %>
 
