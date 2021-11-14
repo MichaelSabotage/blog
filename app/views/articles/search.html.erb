@@ -1,0 +1,11 @@
+<h1> Результаты поиска: </h1>
+
+<% @articles.each do |article|%>
+    <div class="well">
+        <h3><%= article.title%></h3>
+        <p><%= article.body %>></p>
+        <% unless article.archived? %>
+            <%= link_to "Читать далее", article_path(article), :class => 'btn btn-outline-primary' %>
+        <% end %>
+    </div>
+ <% end %>

@@ -45,6 +45,10 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @articles = Article.where('title or body LIKE ?', "%"+ params[:q] +"%")
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :body, :status)

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get "/search", to: "articles#search"
   # О подробностях DSL, доступного в этом файле, написано в http://rusrails.ru/rails-routing
 end
