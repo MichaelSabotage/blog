@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   
-  http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
+  http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show, :search]
   
   def index
     @articles = Article.all
@@ -40,13 +40,13 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy # прочитать почему без восклицательного знака
+    @article.destroy!
 
     redirect_to root_path
   end
 
   def search
-    @articles = Article.where('title or body LIKE ?', "%"+ params[:q] +"%")
+    @articles = Article.where("title ILIKE :q or body ILIKE :q", q: "%#{params[:q]}%")
   end
 
   private

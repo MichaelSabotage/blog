@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
+    get "search", on: :collection
   end
 
-  get "/search", to: "articles#search"
-  # О подробностях DSL, доступного в этом файле, написано в http://rusrails.ru/rails-routing
 end

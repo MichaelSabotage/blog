@@ -28,7 +28,7 @@
               <a class="nav-link active" aria-current="page" href="<%= new_article_path %>"> Добавить статью </a>
             </li>
           </ul>
-          <form class="d-flex" action="search">
+          <form class="d-flex" action="/articles/search">
             <input class="form-control me-2" type="search" name="q" placeholder="Поиск статьи" aria-label="Search">
             <button class="btn btn-light" type="submit">Поиск</button>
           </form>
@@ -44,20 +44,11 @@
 
   
 
- <style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-</style>
 
 <div class="footer">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-wrap justify-content-between align-bottom py-4 my-5 border-top">
     <div class="container">
-    <div class="col-md-4 d-flex align-items-center">
+    <div class="col-md-4 d-flex align-items-bottom">
       <span class="text-muted">© 2021 Sabotage production</span>
     </div>
     </div>
